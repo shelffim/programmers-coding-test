@@ -1,9 +1,5 @@
 def solution(n):
-    for i in range(1, n):
-        if i * i == n:
-            answer = 1
-            break
-        elif i * i > n:
-            answer = 2
-            break
+    answer = 2 - ((n ** 0.5) % 1 == 0)
     return answer
+
+# is_integer
