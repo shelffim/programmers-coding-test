@@ -2,4 +2,4 @@
 
 ## 입문
 
-python, java, swift 3가지 언어로 풀이
+python, java, swift로 풀이한 코드를 저장합니다.
