@@ -19,4 +19,14 @@ class Solution {
  * - reverse() 메서드가 새로운 객체를 만들지 않고 자기 자신(this)을 반환
  * - 각 메서드가 객체를 반환하므로 연속적으로 메서드 호출 가능
  * - new StringBuilder(my_string).reverse().toString() 형태로 간결하게 작성 가능
+ * 
+ * StringBuilder vs StringBuffer 차이점:
+ * 1. 동기화(Synchronization):
+ *    - StringBuilder: 동기화되지 않음 (Thread-unsafe) → 빠름
+ *    - StringBuffer: 동기화됨 (Thread-safe) → 느림
+ * 2. 사용 시나리오:
+ *    - StringBuilder: 단일스레드 환경, 성능 우선 (일반적인 경우)
+ *    - StringBuffer: 멀티스레드 환경, 안전성 우선
+ * 3. 성능: StringBuilder > StringBuffer > String (문자열 연결 시)
+ * 4. 결론: 프로그래머스 코딩테스트에서는 StringBuilder 사용 권장
  */
