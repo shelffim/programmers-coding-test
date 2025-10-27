@@ -2,17 +2,8 @@ package harshad_number;
 
 public class Solution {
     public boolean solution(int x) {
-        int sum = getSum(x);
+        int sum = String.valueOf(x).chars().map(Character::getNumericValue).sum();
         return x % sum == 0;
-    }
-
-    private static int getSum(int x) {
-        int sum = 0;
-        while (x > 0) {
-            sum += x % 10;
-            x /=10;
-        }
-        return sum;
     }
 
     public static void main(String[] args) {
