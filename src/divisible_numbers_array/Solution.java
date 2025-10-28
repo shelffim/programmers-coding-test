@@ -1,28 +1,14 @@
 package divisible_numbers_array;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.Arrays;
 
 public class Solution {
     public int[] solution(int[] arr, int divisor) {
-        List<Integer> list = new ArrayList<>();
-        for (int num : arr) {
-            if (num % divisor == 0) {
-                list.add(num);
-            }
-        }
-
-        if (list.isEmpty()) {
+        int[] answer = Arrays.stream(arr).filter(i -> i % divisor == 0).toArray();
+        if (answer.length == 0) {
             return new int[]{-1};
         }
-
-        Collections.sort(list);
-
-        int[] answer = new int[list.size()];
-        for (int i = 0; i < answer.length; i++) {
-            answer[i] = list.get(i);
-        }
+        Arrays.sort(answer);
         return answer;
     }
 
