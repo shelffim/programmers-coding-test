@@ -5,13 +5,15 @@ import java.util.Set;
 
 public class Solution {
     public int solution(int[] numbers) {
-        Set<Integer> numberSet = new HashSet<>(Set.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 0));
+        boolean[] check = new boolean[10];
         int answer = 0;
         for (int number : numbers) {
-            numberSet.remove(number);
+            check[number] = true;
         }
-        for (Integer num : numberSet) {
-            answer += num;
+        for (int i = 0; i < 10; i++) {
+            if (!check[i]) {
+                answer += i;
+            }
         }
         return answer;
     }
